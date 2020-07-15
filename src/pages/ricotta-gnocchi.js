@@ -30,7 +30,7 @@ const recipeJSON = {
       display: "3.5 oz. flour",
     },
   ],
-  recipe: [
+  instructions: [
     {
       short: "Drain Ricotta",
       description: "Drain the ricotta by spreading it over some paper towels.",

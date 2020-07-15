@@ -7,20 +7,17 @@ const commonStyle = {
 }
 
 const titleStyle = ({ secondary }) => ({
-  ...commonStyle,
   textTransform: "uppercase",
   fontWeight: "bold",
   color: secondary,
 })
 
-const itemStyle = commonStyle
-
 const ToC = ({ model, colors }) => (
-  <List selection>
+  <List selection size="massive">
     <List.Item style={titleStyle(colors)}>Ingredients</List.Item>
     <List.Item style={titleStyle(colors)}>Recipe</List.Item>
-    {model.recipe.map((step, i) => (
-      <List.Item style={itemStyle}>
+    {model.instructions.map((step, i) => (
+      <List.Item>
         <span style={{ color: colors.primary }}>{`${i + 1} `}</span>
         <span>{step.short}</span>
       </List.Item>

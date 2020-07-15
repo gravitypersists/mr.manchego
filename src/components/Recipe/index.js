@@ -2,6 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Grid, Segment } from "semantic-ui-react"
 import ToC from "./Toc"
+import Ingredients from "./Ingredients"
+
+const titleStyle = ({ secondary }) => ({
+  fontSize: 30,
+  lineHeight: "30px",
+  textTransform: "uppercase",
+  fontWeight: "bold",
+  color: secondary,
+})
 
 const Recipe = ({ title, heroImg, model, colors }) => (
   <Grid columns={8}>
@@ -26,7 +35,10 @@ const Recipe = ({ title, heroImg, model, colors }) => (
         </Segment>
       </Grid.Column>
       <Grid.Column width={12}>
-        <Segment fluid>Ingredients</Segment>
+        <Segment fluid>
+          <div style={titleStyle(colors)}>Ingredients</div>
+          <Ingredients model={model} colors={colors} />
+        </Segment>
       </Grid.Column>
     </Grid.Row>
   </Grid>
