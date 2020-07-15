@@ -5,7 +5,9 @@ import "./layout.css"
 
 const Layout = ({ children, backgroundColor, fontFamily }) => {
   return (
-    <div style={{ backgroundColor, fontFamily, height: "100%" }}>
+    <div
+      style={{ backgroundColor, fontFamily, height: "100%", overflow: "auto" }}
+    >
       <div
         style={{
           margin: `0 auto`,
