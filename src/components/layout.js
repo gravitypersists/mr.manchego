@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 
 import "./layout.css"
 
-const Layout = ({ children, backgroundColor }) => {
+const Layout = ({ children, backgroundColor, fontFamily }) => {
   return (
-    <div style={{ backgroundColor, height: "100%" }}>
+    <div style={{ backgroundColor, fontFamily, height: "100%" }}>
       <div
         style={{
           margin: `0 auto`,
