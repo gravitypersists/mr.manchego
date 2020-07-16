@@ -90,7 +90,6 @@ const RicottaGnocchiPage = () => {
     }
   `)
   // map images for each step in JSON for recipe
-  // const stepImages = pickBy(flip(test(/imageStep\d+/)), query)
   const addImages = instructions =>
     instructions.map((step, i) => {
       const queryImage = query[`imageStep${i}`]
