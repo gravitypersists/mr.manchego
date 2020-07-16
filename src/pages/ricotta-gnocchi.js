@@ -73,9 +73,7 @@ const RicottaGnocchiPage = () => {
   return (
     <Layout backgroundColor={colors.primary} fontFamily="Oswald">
       <SEO title="Ricotta Gnocchi" />
-      <Link to="/" sx={{ textDecoration: "none", color: "white" }}>
-        Home
-      </Link>
+      <Link to="/">Home</Link>
       <Recipe
         title="Ricotta Gnocchi"
         model={recipeJSON}
