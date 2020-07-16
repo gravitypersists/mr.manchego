@@ -40,7 +40,9 @@ const Recipe = ({ title, heroImg, model, colors }) => (
           <div style={titleStyle(colors)}>Ingredients</div>
           <Ingredients model={model} colors={colors} />
           <div style={titleStyle(colors)}>Preparation</div>
-          <Preparation model={model} colors={colors} />
+          <div style={{ margin: "1em 0" }}>
+            <Preparation model={model} colors={colors} />
+          </div>
         </Segment>
       </Grid.Column>
     </Grid.Row>

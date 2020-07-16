@@ -39,7 +39,7 @@ const recipeJSON = {
     {
       short: "Mix Ingredients",
       description:
-        "Mix ricotta, parmesan, flour, egg and egg yolk to even consistency by hand. Do not overmix. If needed, add flour.",
+        "Mix ricotta, parmesan, flour, egg and egg yolk to even consistency with a spatula. Do not overmix. If needed, add flour.",
     },
     {
       short: "Form Gnocchi",
