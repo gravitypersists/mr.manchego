@@ -13,7 +13,7 @@ const titleStyle = ({ secondary }) => ({
   color: secondary,
 })
 
-const Recipe = ({ title, heroImg, model, colors }) => {
+const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
   const contextRef = useRef()
   return (
     <Grid columns={8}>
@@ -62,6 +62,10 @@ const Recipe = ({ title, heroImg, model, colors }) => {
             </div>
           </Segment>
         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={4} />
+        <Grid.Column width={12}>{footerImg}</Grid.Column>
       </Grid.Row>
     </Grid>
   )

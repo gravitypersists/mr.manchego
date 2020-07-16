@@ -73,13 +73,19 @@ const RicottaGnocchiPage = () => {
         }
       }
     }
+    fragment fullPaneImage on File {
+      childImageSharp {
+        fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     query {
       hero: file(relativePath: { eq: "ricotta-side.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...fullPaneImage
+      }
+      footer: file(relativePath: { eq: "overhead.png" }) {
+        ...fullPaneImage
       }
       imageStep0: file(relativePath: { eq: "blot.jpg" }) {
         ...itemImage
@@ -107,6 +113,7 @@ const RicottaGnocchiPage = () => {
         model={model}
         colors={colors}
         heroImg={<Img fluid={query.hero.childImageSharp.fluid} />}
+        footerImg={<Img fluid={query.footer.childImageSharp.fluid} />}
       />
     </Layout>
   )
