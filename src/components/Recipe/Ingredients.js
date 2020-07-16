@@ -14,7 +14,7 @@ const tipStyle = ({ secondary }) => ({
 const Ingredients = ({ model, colors }) => (
   <List size="massive">
     {model.ingredients.map(ingredient => (
-      <List.Item>{ingredient.display}</List.Item>
+      <List.Item key={ingredient.display}>{ingredient.display}</List.Item>
     ))}
   </List>
 )

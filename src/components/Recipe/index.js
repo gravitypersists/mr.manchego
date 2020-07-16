@@ -31,12 +31,12 @@ const Recipe = ({ title, heroImg, model, colors }) => (
     </Grid.Row>
     <Grid.Row>
       <Grid.Column width={4}>
-        <Segment fluid>
+        <Segment>
           <ToC model={model} colors={colors} />
         </Segment>
       </Grid.Column>
       <Grid.Column width={12}>
-        <Segment fluid>
+        <Segment>
           <div style={titleStyle(colors)}>Ingredients</div>
           <Ingredients model={model} colors={colors} />
           <div style={titleStyle(colors)}>Preparation</div>

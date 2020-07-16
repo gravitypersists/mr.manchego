@@ -16,7 +16,7 @@ const StepLabel = ({ children, colors }) => (
 const Preparation = ({ model, colors }) => (
   <Grid stackable columns={2}>
     {model.instructions.map((step, i) => (
-      <Grid.Row>
+      <Grid.Row key={step.short}>
         <Grid.Column style={{ display: "flex" }}>
           <StepLabel colors={colors}>{i}</StepLabel>
           <span
@@ -26,8 +26,6 @@ const Preparation = ({ model, colors }) => (
               lineHeight: "24px",
               marginLeft: 10,
             }}
-            basic
-            size="huge"
           >
             {step.description}
           </span>

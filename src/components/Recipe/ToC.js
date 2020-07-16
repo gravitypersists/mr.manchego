@@ -17,7 +17,7 @@ const ToC = ({ model, colors }) => (
     <List.Item style={titleStyle(colors)}>Ingredients</List.Item>
     <List.Item style={titleStyle(colors)}>Recipe</List.Item>
     {model.instructions.map((step, i) => (
-      <List.Item>
+      <List.Item key={step.short}>
         <span style={{ color: colors.primary }}>{`${i + 1} `}</span>
         <span>{step.short}</span>
       </List.Item>
