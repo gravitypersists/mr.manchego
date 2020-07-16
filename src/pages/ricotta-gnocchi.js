@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { assoc, lensProp, over } from "ramda"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import Recipe from "../components/Recipe"
+import gif2 from "../images/consistency.gif"
 
 const colors = {
   primary: "#FF5353",
@@ -40,6 +42,7 @@ const recipeJSON = {
       short: "Mix Ingredients",
       description:
         "Mix ricotta, parmesan, flour, egg and egg yolk to even consistency with a spatula. Do not overmix. If needed, add flour.",
+      img: <img src={gif2} />,
     },
     {
       short: "Form Gnocchi",
@@ -59,26 +62,52 @@ const recipeJSON = {
 }
 
 const RicottaGnocchiPage = () => {
-  const hero = useStaticQuery(graphql`
+  // Gatsby does not allow dynamic queries at runtime. Which means that if I want
+  // to extract a generic Recipe component that uses images, I need to build the
+  // queries for that image and feed those into the component. This is not ideal.
+  const query = useStaticQuery(graphql`
+    fragment itemImage on File {
+      childImageSharp {
+        fluid(maxWidth: 642) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     query {
-      placeholderImage: file(relativePath: { eq: "ricotta-side.png" }) {
+      hero: file(relativePath: { eq: "ricotta-side.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 700) {
+          fluid(maxWidth: 1400) {
             ...GatsbyImageSharpFluid
           }
         }
       }
+      imageStep0: file(relativePath: { eq: "blot.jpg" }) {
+        ...itemImage
+      }
+      imageStep2: file(relativePath: { eq: "dry.jpg" }) {
+        ...itemImage
+      }
     }
   `)
+  // map images for each step in JSON for recipe
+  // const stepImages = pickBy(flip(test(/imageStep\d+/)), query)
+  const addImages = instructions =>
+    instructions.map((step, i) => {
+      const queryImage = query[`imageStep${i}`]
+      return queryImage
+        ? assoc("img", <Img fluid={queryImage.childImageSharp.fluid} />, step)
+        : step
+    })
+  const model = over(lensProp("instructions"), addImages, recipeJSON)
   return (
     <Layout backgroundColor={colors.primary} fontFamily="Oswald">
       <SEO title="Ricotta Gnocchi" />
       <Link to="/">Home</Link>
       <Recipe
         title="Ricotta Gnocchi"
-        model={recipeJSON}
+        model={model}
         colors={colors}
-        heroImg={<Img fluid={hero.placeholderImage.childImageSharp.fluid} />}
+        heroImg={<Img fluid={query.hero.childImageSharp.fluid} />}
       />
     </Layout>
   )

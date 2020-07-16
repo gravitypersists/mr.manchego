@@ -17,8 +17,8 @@ const Preparation = ({ model, colors }) => (
   <Grid stackable columns={2}>
     {model.instructions.map((step, i) => (
       <Grid.Row key={step.short}>
-        <Grid.Column style={{ display: "flex" }}>
-          <StepLabel colors={colors}>{i}</StepLabel>
+        <Grid.Column width={step.img ? 8 : 16} style={{ display: "flex" }}>
+          <StepLabel colors={colors}>{i + 1}</StepLabel>
           <span
             style={{
               flex: 1,
@@ -30,6 +30,7 @@ const Preparation = ({ model, colors }) => (
             {step.description}
           </span>
         </Grid.Column>
+        <Grid.Column>{step.img}</Grid.Column>
       </Grid.Row>
     ))}
   </Grid>
