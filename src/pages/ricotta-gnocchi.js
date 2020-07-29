@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import Recipe from "../components/Recipe"
 import gif2 from "../images/consistency.gif"
+import vid1 from "../images/ricotta-spread.mp4"
+import vid3 from "../images/ricotta-form.mp4"
 
 const colors = {
   primary: "#FF5353",
@@ -16,11 +18,11 @@ const colors = {
 const recipeJSON = {
   ingredients: [
     {
-      display: "12 oz. Ricotta",
+      display: "12 oz. ricotta",
       tip: "make sure your Ricotta does not contain gums or stabilizers",
     },
     {
-      display: "1 oz. Parmesan",
+      display: "1 oz. parmesan",
     },
     {
       display: "1 whole egg",
@@ -35,8 +37,14 @@ const recipeJSON = {
   instructions: [
     {
       short: "Drain Ricotta",
-      description: "Drain the ricotta by spreading it over some paper towels.",
+      description:
+        "Extract excess moisture from ricotta. Spread ricotta over paper towels.",
       caution: "Be careful not to get pieces of paper towel in the ricotta.",
+      img: (
+        <video width={321} autoPlay muted loop>
+          <source src={vid1} type="video/mp4" />
+        </video>
+      ),
     },
     {
       short: "Mix Ingredients",
@@ -48,6 +56,11 @@ const recipeJSON = {
       short: "Form Gnocchi",
       description:
         "With heavily floured surfaces, form the mix into gnocchi.\n\ni. Divide into four equal sizes.\nii. Roll into logs\niii. Cut logs into gnocchi\niv. Sprinkle gnocchi with flour.",
+      img: (
+        <video width={321} autoPlay muted loop>
+          <source src={vid3} type="video/mp4" />
+        </video>
+      ),
     },
     {
       short: "Blanch Gnocchi",
@@ -81,17 +94,11 @@ const RicottaGnocchiPage = () => {
       }
     }
     query {
-      hero: file(relativePath: { eq: "ricotta-side.jpg" }) {
+      footer: file(relativePath: { eq: "ricotta-side.jpg" }) {
         ...fullPaneImage
       }
-      footer: file(relativePath: { eq: "overhead.png" }) {
+      hero: file(relativePath: { eq: "overhead.png" }) {
         ...fullPaneImage
-      }
-      imageStep0: file(relativePath: { eq: "blot.jpg" }) {
-        ...itemImage
-      }
-      imageStep2: file(relativePath: { eq: "dry.jpg" }) {
-        ...itemImage
       }
     }
   `)
