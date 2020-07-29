@@ -63,10 +63,6 @@ const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
           </Segment>
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={4} />
-        <Grid.Column width={12}>{footerImg}</Grid.Column>
-      </Grid.Row>
     </Grid>
   )
 }

@@ -64,9 +64,6 @@ const DinerFriedEggPage = () => {
       }
     }
     query {
-      footer: file(relativePath: { eq: "ricotta-side.jpg" }) {
-        ...fullPaneImage
-      }
       hero: file(relativePath: { eq: "overhead.png" }) {
         ...fullPaneImage
       }
@@ -90,7 +87,6 @@ const DinerFriedEggPage = () => {
         model={model}
         colors={colors}
         heroImg={<Img fluid={query.hero.childImageSharp.fluid} />}
-        footerImg={<Img fluid={query.footer.childImageSharp.fluid} />}
       />
     </Layout>
   )
