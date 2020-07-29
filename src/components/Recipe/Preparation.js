@@ -27,7 +27,9 @@ const Preparation = ({ model, colors }) => (
               marginLeft: 10,
             }}
           >
-            {step.description}
+            {step.description.split("\n").map(str => (
+              <div style={{ minHeight: 14 }}>{str}</div>
+            ))}
           </span>
         </Grid.Column>
         <Grid.Column>{step.img}</Grid.Column>

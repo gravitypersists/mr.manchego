@@ -55,7 +55,7 @@ const recipeJSON = {
     {
       short: "Form Gnocchi",
       description:
-        "With heavily floured surfaces, form the mix into gnocchi.\n\ni. Divide into four equal sizes.\nii. Roll into logs\niii. Cut logs into gnocchi\niv. Sprinkle gnocchi with flour.",
+        "With heavily floured surfaces, form the mix into gnocchi.\n\ni. Divide into equal sizes.\nii. Roll into logs\niii. Cut logs into gnocchi\niv. Sprinkle gnocchi with flour",
       img: (
         <video width={321} autoPlay muted loop>
           <source src={vid3} type="video/mp4" />
