@@ -5,8 +5,8 @@ const StepLabel = ({ children, colors }) => (
   <Label
     size="large"
     style={{
-      backgroundColor: colors.primary,
-      color: "white",
+      backgroundColor: colors.primaryMuted,
+      color: colors.secondary,
     }}
   >
     {children}
@@ -23,7 +23,7 @@ const Preparation = ({ model, colors }) => (
             style={{
               flex: 1,
               fontSize: 18,
-              fontFamily: "Open Sans",
+              fontFamily: "Source Sans Pro",
               lineHeight: "20px",
               marginLeft: 10,
             }}

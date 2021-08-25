@@ -6,8 +6,8 @@ import Ingredients from "./Ingredients"
 import Preparation from "./Preparation"
 
 const titleStyle = ({ secondary }) => ({
-  fontSize: 30,
-  lineHeight: "30px",
+  fontSize: 16,
+  lineHeight: "16px",
   textTransform: "uppercase",
   fontWeight: "bold",
   color: secondary,
@@ -25,7 +25,7 @@ const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
               lineHeight: "min(6vw, 60px)",
               display: "block",
               marginTop: 15,
-              color: "white",
+              color: colors.primary,
             }}
           >
             {title}
@@ -59,7 +59,7 @@ const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
             <div style={titleStyle(colors)}>Ingredients</div>
             <Ingredients model={model} colors={colors} />
             <div style={titleStyle(colors)}>Preparation</div>
-            <div style={{ margin: "1em 0" }}>
+            <div style={{ margin: "16px 0" }}>
               <Preparation model={model} colors={colors} />
             </div>
           </Segment>

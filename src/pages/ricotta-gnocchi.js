@@ -10,8 +10,10 @@ import vid1 from "../images/ricotta-spread.mp4"
 import vid3 from "../images/ricotta-form.mp4"
 
 const colors = {
-  primary: "#FF5353",
-  secondary: "#676767",
+  background: "#fffbf7",
+  primary: "#ffa500",
+  primaryMuted: "#ffe9b8",
+  secondary: "#888888",
   black: "#000000",
 }
 
@@ -32,6 +34,9 @@ const recipeJSON = {
     },
     {
       display: "3.5 oz. flour",
+    },
+    {
+      display: "sauce to serve (such as tomato basil or butter sage)",
     },
   ],
   instructions: [
@@ -109,7 +114,7 @@ const RicottaGnocchiPage = () => {
     })
   const model = over(lensProp("instructions"), addImages, recipeJSON)
   return (
-    <Layout backgroundColor={colors.primary} fontFamily="Oswald">
+    <Layout backgroundColor={colors.background} fontFamily="Crimson Text">
       <SEO title="Ricotta Gnocchi" />
       <Recipe
         title="Ricotta Gnocchi"
