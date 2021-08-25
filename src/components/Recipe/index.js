@@ -16,13 +16,15 @@ const titleStyle = ({ secondary }) => ({
 const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
   const contextRef = useRef()
   return (
-    <Grid columns={8}>
+    <Grid stackable reversed columns={8}>
       <Grid.Row>
         <Grid.Column width={4} verticalAlign="bottom">
           <span
             style={{
-              fontSize: 60,
-              lineHeight: "60px",
+              fontSize: "min(6vw, 60px)",
+              lineHeight: "min(6vw, 60px)",
+              display: "block",
+              marginTop: 15,
               color: "white",
             }}
           >

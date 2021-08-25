@@ -22,8 +22,9 @@ const Preparation = ({ model, colors }) => (
           <span
             style={{
               flex: 1,
-              fontSize: 22,
-              lineHeight: "24px",
+              fontSize: 18,
+              fontFamily: "Open Sans",
+              lineHeight: "20px",
               marginLeft: 10,
             }}
           >
