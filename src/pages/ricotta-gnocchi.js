@@ -41,7 +41,7 @@ const recipeJSON = {
         "Extract excess moisture from ricotta. Spread ricotta over paper towels.",
       caution: "Be careful not to get pieces of paper towel in the ricotta.",
       img: (
-        <video width={321} autoPlay muted loop>
+        <video style={{ width: "min(321px, 100%)" }} autoPlay muted loop>
           <source src={vid1} type="video/mp4" />
         </video>
       ),
@@ -50,14 +50,14 @@ const recipeJSON = {
       short: "Mix Ingredients",
       description:
         "Mix ricotta, parmesan, flour, egg and egg yolk to even consistency with a spatula. Do not overmix. If needed, add flour.",
-      img: <img src={gif2} />,
+      img: <img style={{ width: "min(321px, 100%)" }} src={gif2} />,
     },
     {
       short: "Form Gnocchi",
       description:
         "With heavily floured surfaces, form the mix into gnocchi.\n\ni. Divide into equal sizes.\nii. Roll into logs\niii. Cut logs into gnocchi\niv. Sprinkle gnocchi with flour",
       img: (
-        <video width={321} autoPlay muted loop>
+        <video style={{ width: "min(321px, 100%)" }} autoPlay muted loop>
           <source src={vid3} type="video/mp4" />
         </video>
       ),
