@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import PropTypes from "prop-types"
 import { Grid, Segment, Ref, Rail, Sticky } from "semantic-ui-react"
+import { isMobile } from "react-device-detect"
 import ToC from "./Toc"
 import Ingredients from "./Ingredients"
 import Preparation from "./Preparation"
@@ -36,25 +37,27 @@ const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
       <Grid.Row>
         <Grid.Column width={4}></Grid.Column>
         <Grid.Column width={12}>
-          <Ref innerRef={contextRef}>
-            <Rail
-              attached
-              position="left"
-              style={{ width: 250, right: "calc(100% - 20px)", zIndex: 0 }}
-            >
-              <Sticky context={contextRef} offset={20}>
-                <Segment
-                  style={{
-                    margin: 0,
-                    backgroundColor: "rgba(255, 255, 255, 0.95)",
-                    boxShadow: "none",
-                  }}
-                >
-                  <ToC model={model} colors={colors} />
-                </Segment>
-              </Sticky>
-            </Rail>
-          </Ref>
+          {!isMobile &&
+            <Ref innerRef={contextRef}>
+              <Rail
+                attached
+                position="left"
+                style={{ width: 250, right: "calc(100% - 20px)", zIndex: 0 }}
+              >
+                <Sticky context={contextRef} offset={20}>
+                  <Segment
+                    style={{
+                      margin: 0,
+                      backgroundColor: "rgba(255, 255, 255, 0.95)",
+                      boxShadow: "none",
+                    }}
+                  >
+                    <ToC model={model} colors={colors} />
+                  </Segment>
+                </Sticky>
+              </Rail>
+            </Ref>
+          }
           <Segment style={{ marginTop: 0 }}>
             <div style={titleStyle(colors)}>Ingredients</div>
             <Ingredients model={model} colors={colors} />
