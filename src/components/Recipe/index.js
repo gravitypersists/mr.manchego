@@ -24,7 +24,7 @@ const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
               fontSize: "min(6vw, 60px)",
               lineHeight: "min(6vw, 60px)",
               display: "block",
-              marginTop: 15,
+              marginTop: 16,
               color: colors.primary,
             }}
           >
