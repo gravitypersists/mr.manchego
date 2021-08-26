@@ -16,7 +16,7 @@ const titleStyle = ({ secondary }) => ({
 const Recipe = ({ title, heroImg, footerImg, model, colors }) => {
   const contextRef = useRef()
   return (
-    <Grid stackable reversed columns={8}>
+    <Grid stackable columns={8}>
       <Grid.Row>
         <Grid.Column width={4} verticalAlign="bottom">
           <span

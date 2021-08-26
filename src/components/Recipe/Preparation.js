@@ -28,8 +28,8 @@ const Preparation = ({ model, colors }) => (
               marginLeft: 10,
             }}
           >
-            {step.description.split("\n").map(str => (
-              <div style={{ minHeight: 14 }}>{str}</div>
+            {step.description.split("\n").map((str, j) => (
+              <div style={{ minHeight: 14 }} key={`${i}.${j}`}>{str}</div>
             ))}
           </span>
         </Grid.Column>
