@@ -42,7 +42,7 @@ const Preparation = ({ model, colors }) => (
             ))}
           </span>
         </Grid.Column>
-        <Grid.Column>{step.img}</Grid.Column>
+        {step.img && <Grid.Column>{step.img}</Grid.Column>}
       </Grid.Row>
     ))}
   </Grid>
