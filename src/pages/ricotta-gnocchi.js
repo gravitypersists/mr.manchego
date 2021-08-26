@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { assoc, lensProp, over } from "ramda"
+import hackPrefixedPath from "../utils/hackPrefixedPath"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import Recipe from "../components/Recipe"
@@ -120,7 +121,7 @@ const RicottaGnocchiPage = () => {
         title="Ricotta Gnocchi"
         model={model}
         colors={colors}
-        heroImg={<Img fluid={query.hero.childImageSharp.fluid} />}
+        heroImg={<Img fluid={hackPrefixedPath(query.hero.childImageSharp.fluid)} />}
       />
     </Layout>
   )
