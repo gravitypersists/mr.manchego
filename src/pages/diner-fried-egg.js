@@ -14,7 +14,7 @@ const colors = {
 }
 
 const recipeJSON = {
-  ingredients: [{ display: "1 egg" }],
+  ingredients: [{ display: "1 egg" }, { display: "about 1/2 tbsp fat (like butter or olive oil)" }],
   instructions: [
     {
       short: "Crack Egg",

@@ -1,0 +1,28 @@
+.prep-step-headers {
+  display: none;
+}
+
+.prep-step-content {
+  margin-left: 10px;
+}
+
+/* breakpoint taken from https://semantic-ui.com/elements/container.html */
+@media screen and (max-width: 768px) {
+
+  .toc-rail {
+    display: none;
+  }
+
+  .prep-step-headers {
+    display: flex;
+  }
+
+  .prep-step-labels {
+    display: none !important;
+  }
+
+  .prep-step-content {
+    margin-left: 0px;
+  }
+
+}

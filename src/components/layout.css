@@ -619,3 +619,9 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .main-body-segment {
+    padding: 0 !important;
+  }
+}
