@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Michael Silveira",
   "dependencies": {
-    "gatsby": "^3.12.0",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^3.12.0",
